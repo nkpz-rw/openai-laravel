@@ -9,6 +9,7 @@ use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 use OpenAI;
 use OpenAI\Client;
 use OpenAI\Contracts\ClientContract;
+use OpenAI\Laravel\Commands\InstallCommand;
 use OpenAI\Laravel\Exceptions\ApiKeyIsMissing;
 
 use function is_string;
@@ -33,6 +34,7 @@ final class ServiceProvider extends BaseServiceProvider implements DeferrablePro
             $client = OpenAI::factory()
                 ->withApiKey($apiKey)
                 ->withOrganization($organization)
+                ->withHttpHeader('OpenAI-Beta', 'assistants=v2')
                 ->withHttpClient(new \GuzzleHttp\Client(['timeout' => config('openai.request_timeout', 30)]));
             if (is_string($baseUri)) {
                 $client->withBaseUri($baseUri);
@@ -53,6 +55,10 @@ final class ServiceProvider extends BaseServiceProvider implements DeferrablePro
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__.'/../config/openai.php' => config_path('openai.php'),
+            ]);
+
+            $this->commands([
+                InstallCommand::class,
             ]);
         }
     }

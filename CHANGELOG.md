@@ -4,6 +4,34 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## v0.10.1 (2024-06-06)
+### Changed
+- Changed underlying `openai/client` package version from 0.9.1 to v0.10.1
+
+## v0.10.0-beta.2 (2024-05-28)
+### Fixed
+- Api version header in Service Provider - ([#100](https://github.com/openai-php/laravel/issues/100))
+
+## v0.10.0-beta.1 (2024-05-27)
+### Changed
+- Changed underlying `openai/client` package version from 0.9.1 to v0.10.0-beta.1
+
+## v0.9.1 (2024-05-25)
+### Changed
+- Changed underlying `openai/client` package version from 0.9.0 to v0.9.1
+
+## v0.9.0 (2024-05-21)
+### Changed
+- Changed underlying `openai/client` package version from 0.8.0 to v0.9.0
+
+## v0.8.0 (2023-11-23)
+### Changed
+- Changed underlying `openai/client` package version from 0.7.8 to v0.8.0
+
+## v0.8.0-beta.1 (2023-11-13)
+### Changed
+- Changed underlying `openai/client` package version from 0.7.8 to v0.8.0-beta.1
+
 ## v0.7.8 (2023-11-07)
 ### Changed
 - Changed underlying `openai/client` package version from 0.7.5 to 0.7.8
